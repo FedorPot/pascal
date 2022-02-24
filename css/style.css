@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(224, 248, 253);
+}
+body main {
+    display: flex;
+    justify-content: center;
+}
+body main .container {
+    width: 75%;
+    min-width: 800px;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    height: 200px;
+}
+header {
+    background-color: #00ffde;
+    background-image: url('https://school11kgd.ru/upload/iblock/ff0/ff05a2d1b211e320941187cce43a203d.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+header h1 {
+    font-weight: 500;
+    margin: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+header h3 {
+    font-weight: 300;
+    margin: 7px 0 0;
+    background-color: rgba(0,0,0,0.5);
+}
+nav {
+    background-color: #203760;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav div {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    width: 75%;
+    min-width: 800px;
+}
+nav div a {
+    display: block;
+    padding: 5px 8px;
+    background-color: #fff3b4;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    border: 1px solid brown;
+    box-shadow: black 2px 2px 10px;
+}
+nav div a:active {
+    animation: pressing 0.3s forwards;
+}
+@keyframes pressing {
+    50% {
+        border-style: dashed;
+        border-width: 2px;
+    }
+    100% {
+        transform: scale(0.8);
+        border-radius: 7px;
+        border-style: dashed;
+        border-width: 3px;
+    }
+}
+.information-block {
+    width: 300px;
+    background: rgb(232,232,232);
+    background: linear-gradient(145deg, rgba(232,232,232,1) 0%, rgba(193,193,193,1) 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: black 1px 1px 10px;
+    padding: 5px 15px;
+    transition-property: all;
+    transition: .9s;
+    position: relative;
+
+}
+.information-block:hover {
+    transform: translateY(-15px);
+}
+.information-block .title {
+    font-weight: 600;
+    text-align: center;
+    font-size: 19px;
+}
+.information-block .body {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: justify;
+}
+.information-block img {
+    width: 90%;
+    border-radius: 8px;
+}
+.information-block .info {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: rgba(73, 73, 73, 0.51);
+    font-size: 25px;
+    cursor: help;
+    transition-property: all;
+    transition: .9s;
+}
+.information-block:hover .info {
+    color: rgb(73, 73, 73);
+}
+.article-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.article .title-center {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+.article .title {
+    font-weight: 600;
+    font-size: 28px;
+}
+.article .body {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+}
+code {
+    font-size: 24px;
+    contenteditable: true;
+}
