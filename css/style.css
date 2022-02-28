@@ -11,6 +11,11 @@ body main .container {
     width: 75%;
     min-width: 800px;
 }
+a {
+    text-decoration: none;
+    color: #0d00be;
+    font-weight: 600;
+}
 header {
     display: flex;
     justify-content: center;
@@ -92,6 +97,7 @@ nav div a:active {
     transition-property: all;
     transition: .9s;
     position: relative;
+    margin-left: 30px;
 
 }
 .information-block:hover {
@@ -142,8 +148,53 @@ nav div a:active {
     font-size: 18px;
     font-weight: 400;
     text-align: justify;
+    line-height: 1.5;
 }
 code {
     font-size: 24px;
-    contenteditable: true;
+}
+footer {
+    width: 100%;
+    background-color: #f2f3fd;
+    display: flex;
+    justify-content: center;
+    border-top: 2px dashed black;
+    margin-top: 20px;
+
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    min-width: 800px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+footer .sections {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+footer .sections p {
+    display: block;
+    color:rgb(73, 73, 73);
+    font-style: italic;
+}
+footer .sections a {
+    display: block;
+    color: #7a7a7a;
+    margin-top: 8px;
+    font-weight: 400;
+}
+footer .sections a:hover {
+    color: #000000;
+}
+footer .author {
+    width: 29%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+footer .author p {
+    color:rgb(73, 73, 73)
 }
