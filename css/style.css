@@ -115,6 +115,7 @@ nav div a:active {
 .information-block img {
     width: 90%;
     border-radius: 8px;
+    margin-bottom: 5px;
 }
 .information-block .info {
     position: absolute;
