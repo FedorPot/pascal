@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <title>PascalABC.NET</title>
+</head>
+<body>
+    <header>
+        <h1>PascalABC.NET</h1>
+        <h3>Справочник по языку программирования</h3>
+    </header>
+    <nav>
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="startwith.html">С чего начать?</a>
+            <a href="mainlang.html">Основны языка</a>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="article">
+                <p class="title-center">Основы языка PascalABC.NET</p>
+                <p class="body">
+                    На этой странице собраны <b>основные конструкции, операторы и примеры программ</b> на языке PascalABC.NET
+                </p>
+            </div>
+            <div class="article">
+                <p class="title-center">Содержание</p>
+                <ol class="body">
+                    <li>
+                        <a href="#structure">Структура программы</a>
+                    </li>
+                    <li>
+                        <a href="#output">Вывод на экран</a>
+                    </li>
+                    <li>
+                        <a href="#integers">Целочисленные переменные</a>
+                    </li>
+                    <li>
+                        <a href="#input">Считывание (ввод с клавиатуры) переменных</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="article">
+                <p id="structure" class="title-center">Структура программы</p>
+                <p class="body">
+                    Основная программа в PascalABC.NET размещается между операторами <code>begin</code> и <code>end</code>.
+                </p>
+<blockquote><font color="#000000">Begin</font><br/>
+<font color="#808080">//&nbsp;Основная&nbsp;программа</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+                <p class="body">
+                Переменные объявляются до основной программы:
+                </p>
+                <div class="article-part">
+<blockquote><font color="#000000">var</font>&nbsp;название<font color="#cc66cc">1</font><font color="#000066">,</font>&nbsp;название<font color="#cc66cc">2</font><font color="#000066">,</font>&nbsp;название<font color="#cc66cc">3</font><font color="#000066">:</font>&nbsp;тип<font color="#cc66cc">1</font><font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;название<font color="#cc66cc">4</font><font color="#000066">,</font>&nbsp;название<font color="#cc66cc">5</font><font color="#000066">,</font>&nbsp;название<font color="#cc66cc">6</font><font color="#000066">:</font>&nbsp;тип<font color="#cc66cc">2</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+<font color="#808080">//&nbsp;Основная&nbsp;программа</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+<div class="information-block">
+    <p class="title">Комментарии</p>
+    <p class="body">В PascalABC.NET комментарии могут быть сделаны с помощью <code>//</code> или <code>{ }</code></p>
+    <span class="material-icons material-icons-outlined info">
+        info
+    </span>
+</div>
+</div>
+                <p class="body">
+                    Оператры внутри программы разделяются точкой с запятой:
+                </p>
+<blockquote><font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;оператор<font color="#cc66cc">1</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;оператор<font color="#cc66cc">2</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;оператор<font color="#cc66cc">3</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;оператор<font color="#cc66cc">4</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="output" class="title-center">Вывод на экран</p>
+                <p class="body">Для вывод информации на экран в PascalABC.NET применяются операторы <code>write</code> и <code>writeln</code>.</p>
+                <p class="body">Оператор <code>writeln</code>, в отличии от <code>write</code>, осуществляет <b>после вывода</b> <i>переход на новую строку</i>. Например:</p>
+<blockquote><font color="#000000">program</font>&nbsp;outputExample<font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;название&nbsp;программы&nbsp;}</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Hello&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'world!'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">{&nbsp;На&nbsp;экран&nbsp;будет&nbsp;выведено&nbsp;&quot;Hello&nbsp;world!&quot;&nbsp;в&nbsp;одну&nbsp;(!)&nbsp;строку&nbsp;}</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Hello&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'world!'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">{&nbsp;На&nbsp;первой&nbsp;строке&nbsp;будет&nbsp;выведено&nbsp;&quot;Hello&nbsp;&quot;,&nbsp;а&nbsp;на&nbsp;второй&nbsp;&quot;world!&quot;&nbsp;}</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+                <p class="body">
+                    Если нужно вывести несколько элементов на экран, то можно указывать их <b>через запятую</b>. Вывод значения переменной на экран:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;exampleOutput<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;height&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">5</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Высота:&nbsp;'</font><font color="#000066">,</font>&nbsp;height<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;метров'</font><font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;выведет&nbsp;на&nbsp;экран:&nbsp;'Высота:&nbsp;5&nbsp;метров'&nbsp;}</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="integers" class="title-center">Целочисленные переменные</p>
+                <p class="body">
+                    В PascalABC.NET представлены следующие целочисленные типы данных:
+                </p>
+                <table class="body">
+                    <tr>
+                        <th>Длина, байт</th><th>Без знака</th><th>Со знаком</th>
+                    </tr>
+                    <tr>
+                        <td>1</td><td><p><b>byte</b></p><p>0 .. 255</p></td><td><p><b>shortint</b></p><p>-128 .. 127</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td><p><b>word</b></p><p>0 .. 65535</p></td><td><p><b>smallint</b></p><p>-32768 .. 32767</p></td>
+                    </tr>
+                    <tr>
+                        <td>4</td><td><p><b>longword, cardinal</b></p><p>0 .. 4 294 967295</p></td><td><p><b>integer, longint</b></p><p>-2 147 483648.. 2 147 483647</p></td>
+                    </tr>
+                    <tr>
+                        <td>8</td><td><p><b>uint64</b></p><p>0 .. 18 446744 073709551615</p></td><td><p><b>int64</b></p><p>-9 223372036854 775808.. 9 223372036854 775807</p></td>
+                    </tr>
+                    <tr>
+                        <td>переменная</td><td></td><td><p><b>BigInteger</b></p><p>Ограничено только памятью компьютера</p></td>
+                    </tr>
+                </table>
+                <p class="body">
+                    В PascalABC.NET, чтобы присвоить значение переменной нужно воспользоваться <b>оператором <code>:=</code></b>. Пример: <code>height := 5;</code> Объявление и использование целочисленных переменных:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;integerExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;c<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">3</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">5</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;a&nbsp;<font color="#000066">+</font>&nbsp;b<font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font>c<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Выведет&nbsp;8&nbsp;}</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="input" class="title-center">Считывание (ввод с клавиатуры) переменных</p>
+                <p class="body">
+                    Чтобы считать переменную с клавиатуры в PascalABC.NET применяется операторы <code>read</code> и <code>readln</code>. Последний <b>после считывания</b> осуществляет <i>переход на новую строку</i>. Пример использования оператора <code>read</code> с целыочисленным типом <code>integer</code>:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;integerExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;c<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;первое&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>a<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">{&nbsp;Вводим&nbsp;7&nbsp;}</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;второе&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">{&nbsp;Вводим&nbsp;8&nbsp;}</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Сумма&nbsp;чисел&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;и&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;равна&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">+</font>b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Будет&nbsp;выведено:&nbsp;Сумма&nbsp;чисел&nbsp;7&nbsp;и&nbsp;8&nbsp;равна&nbsp;15&nbsp;}</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="sections">
+                <p>Разделы сайта</p>
+                <a href="index.html">Главная</a>
+                <a href="history.html">История</a>
+                <a href="startwith.html">С чего начать?</a>
+                <a href="mainlang.html">Основны языка</a>
+            </div>
+            <div class="author">
+                <p>Потапов Фёдор 2022</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script type="text/javascript">
+        // hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>

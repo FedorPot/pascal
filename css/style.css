@@ -85,7 +85,7 @@ nav div a:active {
 }
 .information-block {
     width: 40%;
-    background-color: rgb(239, 239, 239);
+    background-color: rgb(243, 243, 243);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -150,9 +150,18 @@ nav div a:active {
     text-align: justify;
     line-height: 1.5;
 }
+.article .body code {
+    font-size: 18px;
+}
 code {
     font-size: 24px;
 }
+blockquote {
+    font-family: monospace;
+    margin: 0;
+    font-size: 18px;
+}
+
 footer {
     width: 100%;
     background-color: #f2f3fd;
@@ -197,4 +206,15 @@ footer .author {
 }
 footer .author p {
     color:rgb(73, 73, 73)
+}
+table[class="body"] {
+    border-collapse: collapse;
+    width: 100%;
+}
+table[class="body"] p {
+    margin: 0;
+}
+table[class="body"] th, td {
+    padding: 7px 10px;
+    border: 2px solid black;
 }
