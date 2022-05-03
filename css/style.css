@@ -218,3 +218,20 @@ table[class="body"] th, td {
     padding: 7px 10px;
     border: 2px solid black;
 }
+.upper {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    background-color: #b5efff;
+    cursor: pointer;
+    padding: 7px 9px;
+    border-radius: 7px;
+    border: 2px dashed blue;
+}
+.upper:active {
+    transform: scale(0.9);
+}
+.upper p {
+    padding: 0;
+    margin: 0;
+}

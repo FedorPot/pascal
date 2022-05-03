@@ -48,6 +48,29 @@
                     <li>
                         <a href="#input">Считывание (ввод с клавиатуры) переменных</a>
                     </li>
+                    <li>
+                        <a href="#const">Константы</a>
+                    </li>
+                    <li>
+                        <a href="#arifm">Арифметические операции</a>
+                    </li>
+                    <li>
+                        <a href="#standarifmfunc">Стандартные целочисленные функции</a>
+                    </li>
+                    <li>
+                        <a href="#incrementanddecrement">Инкремент и декремент</a>
+                    </li>
+                    <li>
+                        <a href="#if">Условный оператор</a>
+                    </li>
+                    <li>
+                        <a href="#cycle">Циклы</a>
+                        <ul>
+                            <li>while .. do</li>
+                            <li>repeat .. until</li>
+                            <li>for</li>
+                        </ul>
+                    </li>
                 </ol>
             </div>
             <div class="article">
@@ -87,7 +110,7 @@
             </div>
             <div class="article">
                 <p id="output" class="title-center">Вывод на экран</p>
-                <p class="body">Для вывод информации на экран в PascalABC.NET применяются операторы <code>write</code> и <code>writeln</code>.</p>
+                <p class="body">Для вывода информации на экран в PascalABC.NET применяются операторы <code>write</code> и <code>writeln</code>.</p>
                 <p class="body">Оператор <code>writeln</code>, в отличии от <code>write</code>, осуществляет <b>после вывода</b> <i>переход на новую строку</i>. Например:</p>
 <blockquote><font color="#000000">program</font>&nbsp;outputExample<font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;название&nbsp;программы&nbsp;}</font><br/>
 <font color="#000000">Begin</font><br/>
@@ -159,6 +182,111 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Сумма&nbsp;чисел&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;и&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;равна&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">+</font>b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Будет&nbsp;выведено:&nbsp;Сумма&nbsp;чисел&nbsp;7&nbsp;и&nbsp;8&nbsp;равна&nbsp;15&nbsp;}</font><br/>
 <font color="#000000">end</font><font color="#000066">.</font></blockquote>
             </div>
+            <div class="article">
+                <p id="const" class="title-center">Константы</p>
+                <p class="body">
+                    Константы описываются в специальном <b><i>разделе описания констант</i></b>, начинающийся служебным словом <code>const</code>, перед основной программой.
+                </p>
+                <p class="body">
+                    Описание константы может выглядить так: <code>имя константы = значение;</code> или так: <code>имя константы: тип = значение;</code>
+                </p>
+                <p class="body">
+                    Пример программы с использованием константы:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;constExample<font color="#000066">;</font><br/>
+<font color="#000000">const</font>&nbsp;pi&nbsp;<font color="#000066">=</font>&nbsp;<font color="#cc66cc">3.1415</font><font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;r<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;радиус:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>r<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Длина&nbsp;окружности&nbsp;радиусом&nbsp;'</font><font color="#000066">,</font>&nbsp;r<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;равна&nbsp;'</font><font color="#000066">,</font>&nbsp;<font color="#cc66cc">2</font>&nbsp;<font color="#000066">*</font>&nbsp;pi&nbsp;<font color="#000066">*</font>&nbsp;r<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Площадь&nbsp;окружности&nbsp;радиусом&nbsp;'</font><font color="#000066">,</font>&nbsp;r<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;равна&nbsp;'</font><font color="#000066">,</font>&nbsp;pi&nbsp;<font color="#000066">*</font>&nbsp;r&nbsp;<font color="#000066">*</font>&nbsp;r<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="arifm" class="title-center">Арифметические операции</p>
+                <p class="body">
+                    В PascalABC.NET есть следующие арифметические операции:
+                </p>
+                <ul class="body">
+                    <li><code>+</code> — сложение</li>
+                    <li><code>-</code> — вычитание</li>
+                    <li><code>*</code> — умножение</li>
+                    <li><code>/</code> — деление</li>
+                    <li><code>div</code> - целочисленное деление</li>
+                    <li><code>mod</code> - остаток от деления</li>
+                </ul>
+                <p class="body">Пример программы с арифметическими операциями:</p>
+<blockquote><font color="#000000">program</font>&nbsp;arifmExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;первое&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>a<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;второе&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;+&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;=&nbsp;'</font><font color="#000066">,</font>&nbsp;a&nbsp;<font color="#000066">+</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;-&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;=&nbsp;'</font><font color="#000066">,</font>&nbsp;a&nbsp;<font color="#000066">-</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;*&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;=&nbsp;'</font><font color="#000066">,</font>&nbsp;a&nbsp;<font color="#000066">*</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;/&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;=&nbsp;'</font><font color="#000066">,</font>&nbsp;a&nbsp;<font color="#000066">/</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;div&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;=&nbsp;'</font><font color="#000066">,</font>&nbsp;a&nbsp;<font color="#000000">div</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;mod&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;=&nbsp;'</font><font color="#000066">,</font>&nbsp;a&nbsp;<font color="#000000">mod</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="standarifmfunc" class="title-center">Стандартные целочисленные функции</p>
+                <p class="body">Некоторые стандартные целочисленные функции в PascalABC.NET:</p>
+                <ul class="body">
+                    <li><code>Abs(a)</code> - возвращает модуль числа <code>a</code></li>
+                    <li><code>Max(a, b)</code> - возвращает максимальное из чисел <code>a, b</code></li>
+                    <li><code>Min(a, b)</code> - возвращает минимальное из чисел <code>a, b</code></li>
+                    <li><code>Random(a)</code> -  возвращает целое случайное число из диапазона <code>0 .. a-1</code></li>
+                    <li><code>Random(a, b)</code> -  возвращает целое случайное число из диапазона <code>a .. b</code></li>
+                    <li><code>Sign(a)</code> -  возвращает <code>-1</code> при <code>a&lt;0</code>, <code>0</code> при <code>a=0</code> и <code>1</code> при <code>a>0</code></li>
+                    <li><code>Sqr(a)</code> -  возвращает квадрат <code>a</code></li>
+                </ul>
+<blockquote><font color="#000000">program</font>&nbsp;standartFunctionsExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;первое&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>a<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;второе&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Максимальное:&nbsp;'</font><font color="#000066">,</font>&nbsp;Max<font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Минимальное:&nbsp;'</font><font color="#000066">,</font>&nbsp;Min<font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Случайное&nbsp;число&nbsp;от&nbsp;0&nbsp;до&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">-</font><font color="#cc66cc">1</font><font color="#000066">,</font>&nbsp;<font color="#ff0000">':&nbsp;'</font><font color="#000066">,</font>&nbsp;Random<font color="#009900">&#40;</font>a<font color="#009900">&#41;</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Случайное&nbsp;число&nbsp;от&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;до&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">':&nbsp;'</font><font color="#000066">,</font>&nbsp;Random<font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font><font color="#ff0000">'Знак&nbsp;числа&nbsp;'</font><font color="#000066">,</font>&nbsp;a<font color="#000066">,</font>&nbsp;<font color="#ff0000">':&nbsp;'</font><font color="#000066">,</font>&nbsp;Sign<font color="#009900">&#40;</font>a<font color="#009900">&#41;</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Квадрат&nbsp;числа&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#000066">,</font>&nbsp;<font color="#ff0000">':&nbsp;'</font><font color="#000066">,</font>&nbsp;Sqr<font color="#009900">&#40;</font>b<font color="#009900">&#41;</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="incrementanddecrement" class="title-center">Инкремент и декремент</p>
+                <p class="body">
+                    <i>Инкремент</i> - это <b>увелечение</b> значение на определенную величину, а <i>декремент</i> - <b>уменьшение</b>. В PascalABC.NET для таких операций есть <i>специальные функции</i> <code>Inc</code> и <code>Dec</code>. Общий вид записи таков:
+                </p>
+<blockquote>Inc<font color="#009900">&#40;</font>ИмяПеременной<font color="#000066">,</font>&nbsp;ЗначениеИнкремента<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+Dec<font color="#009900">&#40;</font>ИмяПеременной<font color="#000066">,</font>&nbsp;ЗначениеДекремента<font color="#009900">&#41;</font><font color="#000066">;</font></blockquote>
+                <p class="body">Если значение инкремента (или декремента) равно единице, то его <i>можно не указывать</i>:</p>
+<blockquote><font color="#000000">program</font>&nbsp;standartFunctionsExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">4</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Inc<font color="#009900">&#40;</font>a<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">6</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Dec<font color="#009900">&#40;</font>b<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Выведет&nbsp;5&nbsp;5&nbsp;}</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+                <p class="body">У инкремента и декремента есть и другая запись:</p>
+<blockquote><font color="#000000">program</font>&nbsp;standartFunctionsExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">4</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;<font color="#000066">+=</font>&nbsp;<font color="#cc66cc">2</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">6</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;<font color="#000066">-=</font>&nbsp;<font color="#cc66cc">3</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Выведет&nbsp;6&nbsp;3&nbsp;}</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
         </div>
     </main>
     <footer>
@@ -175,6 +303,9 @@
             </div>
         </div>
     </footer>
+    <div class="upper" onclick="window.scrollTo(0, 0);">
+        <p>Наверх</p>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script type="text/javascript">
         // hljs.initHighlightingOnLoad();
