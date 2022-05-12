@@ -235,3 +235,9 @@ table[class="body"] th, td {
     padding: 0;
     margin: 0;
 }
+
+@media (max-width: 1300px) {
+    blockquote {
+        overflow-wrap: break-word;
+    }
+}
