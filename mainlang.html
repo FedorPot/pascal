@@ -66,7 +66,7 @@
                     <li>
                         <a href="#cycle">Циклы</a>
                         <ul>
-                            <li>while .. do</li>
+                            <li><a href="#while">while .. do</a></li>
                             <li>repeat .. until</li>
                             <li>for</li>
                         </ul>
@@ -267,7 +267,7 @@
 <blockquote>Inc<font color="#009900">&#40;</font>ИмяПеременной<font color="#000066">,</font>&nbsp;ЗначениеИнкремента<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
 Dec<font color="#009900">&#40;</font>ИмяПеременной<font color="#000066">,</font>&nbsp;ЗначениеДекремента<font color="#009900">&#41;</font><font color="#000066">;</font></blockquote>
                 <p class="body">Если значение инкремента (или декремента) равно единице, то его <i>можно не указывать</i>:</p>
-<blockquote><font color="#000000">program</font>&nbsp;standartFunctionsExample<font color="#000066">;</font><br/>
+<blockquote><font color="#000000">program</font>&nbsp;incrementAndDecrementExample<font color="#000066">;</font><br/>
 <font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
 <font color="#000000">Begin</font><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">4</font><font color="#000066">;</font><br/>
@@ -277,7 +277,7 @@ Dec<font color="#009900">&#40;</font>ИмяПеременной<font color="#000
 &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Выведет&nbsp;5&nbsp;5&nbsp;}</font><br/>
 <font color="#000000">end</font><font color="#000066">.</font></blockquote>
                 <p class="body">У инкремента и декремента есть и другая запись:</p>
-<blockquote><font color="#000000">program</font>&nbsp;standartFunctionsExample<font color="#000066">;</font><br/>
+<blockquote><font color="#000000">program</font>&nbsp;incrementAndDecrementExample<font color="#000066">;</font><br/>
 <font color="#000000">var</font>&nbsp;a<font color="#000066">,</font>&nbsp;b<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
 <font color="#000000">Begin</font><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">4</font><font color="#000066">;</font><br/>
@@ -286,6 +286,25 @@ Dec<font color="#009900">&#40;</font>ИмяПеременной<font color="#000
 &nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;<font color="#000066">-=</font>&nbsp;<font color="#cc66cc">3</font><font color="#000066">;</font><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font>a<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;'</font><font color="#000066">,</font>&nbsp;b<font color="#009900">&#41;</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;Выведет&nbsp;6&nbsp;3&nbsp;}</font><br/>
 <font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+            <div class="article">
+                <p id="if" class="title-center">Условный оператор</p>
+                <p class="body">
+                    Условный оператор позволяет реализовать <i>ветвление</i>. В PascalABC.NET условный оператор имеет следующий вид:
+                </p>
+                <p class="body">
+                    Пример программы с условным оператором:
+                </p>
+            </div>
+            <div class="article">
+                <p id="cycle" class="title-center">Циклы</p>
+                <p class="body">
+                    С помощью циклов можно выполнять одно и то же действие несколько раз.
+                </p>
+                <p id="while" class="title-center">Цикл while</p>
+                <p class="body">
+                    С помощью циклов можно выполнять одно и то же действие несколько раз.
+                </p>
             </div>
         </div>
     </main>
@@ -306,9 +325,5 @@ Dec<font color="#009900">&#40;</font>ИмяПеременной<font color="#000
     <div class="upper" onclick="window.scrollTo(0, 0);">
         <p>Наверх</p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-    <script type="text/javascript">
-        // hljs.initHighlightingOnLoad();
-    </script>
 </body>
 </html>
