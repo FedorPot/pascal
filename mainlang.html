@@ -64,11 +64,14 @@
                         <a href="#if">Условный оператор</a>
                     </li>
                     <li>
+                        <a href="#case">Оператор выбора</a>
+                    </li>
+                    <li>
                         <a href="#cycle">Циклы</a>
                         <ul>
-                            <li><a href="#while">while .. do</a></li>
-                            <li>repeat .. until</li>
-                            <li>for</li>
+                            <li><a href="#while">Цикл с предусловием while</a></li>
+                            <li><a href="#repeat">Цикл с постусловием repeat</a></li>
+                            <li><a href="#for">Цикл с параметром for</a></li>
                         </ul>
                     </li>
                 </ol>
@@ -99,7 +102,7 @@
 </div>
 </div>
                 <p class="body">
-                    Оператры внутри программы разделяются точкой с запятой:
+                    Операторы внутри программы разделяются точкой с запятой:
                 </p>
 <blockquote><font color="#000000">Begin</font><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;оператор<font color="#cc66cc">1</font><font color="#000066">;</font><br/>
@@ -292,19 +295,136 @@ Dec<font color="#009900">&#40;</font>ИмяПеременной<font color="#000
                 <p class="body">
                     Условный оператор позволяет реализовать <i>ветвление</i>. В PascalABC.NET условный оператор имеет следующий вид:
                 </p>
+<blockquote><font color="#000000">if</font>&nbsp;условие&nbsp;<font color="#000000">then</font>&nbsp;действие<font color="#cc66cc">1</font><br/>
+<font color="#000000">else</font>&nbsp;действие<font color="#cc66cc">2</font><font color="#000066">;</font></blockquote>
+                <p class="body">
+                    Или без else:
+                </p>
+<blockquote><font color="#000000">if</font>&nbsp;условие&nbsp;<font color="#000000">then</font>&nbsp;действие<font color="#cc66cc">1</font><font color="#000066">;</font></blockquote>
                 <p class="body">
                     Пример программы с условным оператором:
                 </p>
+<blockquote><font color="#000000">program</font>&nbsp;ifExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;x<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>x<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">if</font>&nbsp;<font color="#009900">&#40;</font>x&nbsp;<font color="#000000">mod</font>&nbsp;<font color="#cc66cc">2</font>&nbsp;<font color="#000066">=</font>&nbsp;<font color="#cc66cc">0</font><font color="#009900">&#41;</font>&nbsp;<font color="#000000">then</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;чётное'</font><font color="#009900">&#41;</font><br/>
+&nbsp;&nbsp;<font color="#000000">else</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;нечётное'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+                <p class="body">
+                    Если необходимо выполнить больше одного действия, то используются операторные скобки <code>begin ... end;</code>
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;ifExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;x<font color="#000066">:</font>&nbsp;<font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>x<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">if</font>&nbsp;<font color="#009900">&#40;</font>x&nbsp;<font color="#000000">mod</font>&nbsp;<font color="#cc66cc">2</font>&nbsp;<font color="#000066">=</font>&nbsp;<font color="#cc66cc">0</font><font color="#009900">&#41;</font>&nbsp;<font color="#000000">then</font>&nbsp;<font color="#000000">begin</font>&nbsp;x<font color="#000066">+=</font><font color="#cc66cc">2</font><font color="#000066">;</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;чётное'</font><font color="#009900">&#41;</font>&nbsp;<font color="#000000">end</font><br/>
+&nbsp;&nbsp;<font color="#000000">else</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;нечётное'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
             </div>
+            <div class="article">
+                <p id="case" class="title-center">Оператор выбора</p>
+                <p class="body">
+                    Оператор выбора часто может способствовать сокращению кода (при использование его вместо условного оператора). В PascalABC.NET он записывается по такой схеме:
+                </p>
+<blockquote><font color="#000000">case</font>&nbsp;Переключатель&nbsp;<font color="#000000">of</font><br/>
+&nbsp;&nbsp;списокВыбора<font color="#cc66cc">1</font><font color="#000066">:</font>&nbsp;оператор<font color="#cc66cc">1</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;списокВыбора<font color="#cc66cc">2</font><font color="#000066">:</font>&nbsp;оператор<font color="#cc66cc">2</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;списокВыбора<font color="#cc66cc">3</font><font color="#000066">:</font>&nbsp;оператор<font color="#cc66cc">3</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000066">...</font><br/>
+&nbsp;&nbsp;списокВыбораN<font color="#000066">:</font>&nbsp;операторN<br/>
+&nbsp;&nbsp;<font color="#000000">Else</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;группаОператоров<br/>
+<font color="#000000">end</font><font color="#000066">;</font></blockquote>
+                <p class="body">
+                    Пример программы с оператором выбора:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;caseExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;x<font color="#000066">:</font><font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;число&nbsp;от&nbsp;0&nbsp;до&nbsp;1000:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>x<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">case</font>&nbsp;x&nbsp;<font color="#000000">of</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#cc66cc">0</font><font color="#000066">..</font><font color="#cc66cc">9</font><font color="#000066">:</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font><font color="#ff0000">'&nbsp;однозначное'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#cc66cc">10</font><font color="#000066">..</font><font color="#cc66cc">99</font><font color="#000066">:</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;двухзначное'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#cc66cc">100</font><font color="#000066">..</font><font color="#cc66cc">999</font><font color="#000066">:</font>&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;трёхзначное'</font><font color="#009900">&#41;</font><br/>
+&nbsp;&nbsp;<font color="#000000">Else</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Число&nbsp;'</font><font color="#000066">,</font>&nbsp;x<font color="#000066">,</font>&nbsp;<font color="#ff0000">'&nbsp;больше&nbsp;1000&nbsp;или&nbsp;меньше&nbsp;0'</font><font color="#009900">&#41;</font><br/>
+&nbsp;&nbsp;<font color="#000000">end</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+            </div>
+
             <div class="article">
                 <p id="cycle" class="title-center">Циклы</p>
                 <p class="body">
                     С помощью циклов можно выполнять одно и то же действие несколько раз.
                 </p>
-                <p id="while" class="title-center">Цикл while</p>
+                <p id="while" class="title-center">Цикл с предусловием while</p>
                 <p class="body">
-                    С помощью циклов можно выполнять одно и то же действие несколько раз.
+                    Цикл <code>while</code> относится к циклам с предусловием, то есть сначала проверяется истинность какого-либо выражения, а уже потом выполняется действие. В PascalABC.NET цикл <code>while</code> записывается так:
                 </p>
+<blockquote><font color="#000000">while</font>&nbsp;логическоеВыражение&nbsp;<font color="#000000">do</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;телоЦикла<font color="#000066">;</font></blockquote>
+                <p class="body">
+                    В теле цикла может быть любой оператор или блок операторов.
+                </p>
+                <p class="body">
+                    Следующая программа выводит все цифры числа в столбик, начиная с конца:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;whileExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;x<font color="#000066">:</font><font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>x<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">while</font>&nbsp;x&nbsp;&gt;&nbsp;<font color="#cc66cc">0</font>&nbsp;<font color="#000000">do</font><br/>
+&nbsp;&nbsp;<font color="#000000">begin</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>x&nbsp;<font color="#000000">mod</font>&nbsp;<font color="#cc66cc">10</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;x&nbsp;<font color="#000000">div</font>&nbsp;<font color="#cc66cc">10</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">end</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+                <p id="repeat" class="title-center">Цикл с постусловием repeat</p>
+                <p class="body">
+                    Цикл <code>repeat</code> относится к циклам с постусловием, то есть сначала выполняется действие, а потом проверяется логическое выражение. Записывается цикл <code>repeat</code> в PascalABC.NET так:
+                </p>
+<blockquote><font color="#000000">repeat</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;телоЦикла<br/>
+<font color="#000000">until</font>&nbsp;логическоеВыражение<font color="#000066">;</font></blockquote>
+                <p class="body">
+                    Пример программы с циклом <code>repeat</code>:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;repeatExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;x<font color="#000066">,</font>&nbsp;sum<font color="#000066">:</font><font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;sum&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;<font color="#cc66cc">0</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">repeat</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>x<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;<font color="#000066">+=</font>&nbsp;x<font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">until</font>&nbsp;x&nbsp;&lt;&nbsp;<font color="#cc66cc">0</font><font color="#000066">;</font>&nbsp;<font color="#808080">{&nbsp;цикл&nbsp;прервется,&nbsp;когда&nbsp;будет&nbsp;введено&nbsp;отрицатаельное&nbsp;число&nbsp;}</font><br/>
+&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Сумма&nbsp;введённых&nbsp;чисел:&nbsp;'</font><font color="#000066">,</font>&nbsp;sum<font color="#009900">&#41;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
+                <p id="for" class="title-center">Цикл с параметром for</p>
+                <p class="body">
+                    Цикл с параметром повторяет действие заданное число раз и при этом автоматически увеличивает значение некоторой заданной переменной на единицу во время каждой итерации. В PascalABC.NET цикл <code>for</code> записывается так:
+                </p>
+<blockquote><font color="#000000">for</font>&nbsp;имяПараметра&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;начальноеЗначение&nbsp;<font color="#000000">to</font>&nbsp;конечноеЗначение&nbsp;<font color="#000000">do</font>&nbsp;телоЦикла<font color="#000066">;</font></blockquote>
+                <p class="body">
+                    ...или, если конечное значение меньше начального, так:
+                </p>
+<blockquote><font color="#000000">for</font>&nbsp;имяПараметра&nbsp;<font color="#000066">:</font><font color="#000066">=</font>&nbsp;начальноеЗначение&nbsp;<font color="#000000">downto</font>&nbsp;конечноеЗначение&nbsp;<font color="#000000">do</font>&nbsp;телоЦикла<font color="#000066">;</font></blockquote>
+                <p class="body">
+                    Пример программы с циклом <code>for</code>:
+                </p>
+<blockquote><font color="#000000">program</font>&nbsp;forExample<font color="#000066">;</font><br/>
+<font color="#000000">var</font>&nbsp;x<font color="#000066">,</font>&nbsp;i<font color="#000066">:</font><font color="#000066">integer</font><font color="#000066">;</font><br/>
+<font color="#000000">Begin</font><br/>
+&nbsp;&nbsp;<font color="#000066">write</font><font color="#009900">&#40;</font><font color="#ff0000">'Введите&nbsp;число:&nbsp;'</font><font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000066">readln</font><font color="#009900">&#40;</font>x<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">if</font>&nbsp;x&nbsp;&lt;&nbsp;<font color="#cc66cc">1</font>&nbsp;<font color="#000000">then</font>&nbsp;x<font color="#000066">:</font><font color="#000066">=</font><font color="#cc66cc">1</font><font color="#000066">;</font><br/>
+&nbsp;&nbsp;<font color="#000000">for</font>&nbsp;i<font color="#000066">:</font><font color="#000066">=</font><font color="#cc66cc">1</font>&nbsp;<font color="#000000">to</font>&nbsp;x&nbsp;<font color="#000000">do</font>&nbsp;<font color="#000066">writeln</font><font color="#009900">&#40;</font>i<font color="#000066">,</font>&nbsp;<font color="#ff0000">':&nbsp;'</font><font color="#000066">,</font>&nbsp;i&nbsp;<font color="#000066">*</font>&nbsp;i<font color="#009900">&#41;</font><font color="#000066">;</font><br/>
+<font color="#000000">end</font><font color="#000066">.</font></blockquote>
             </div>
         </div>
     </main>
